@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<div id="top" class="row">
+ <div class="col-md-3">
+        <h2>Lista de Chamados</h2>
+    </div>
+ 
+    <div class="col-md-6">
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit" ng-click="listarChamados()">                
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+       
+    </div>
+ 	 <div class="col-md-3">
+        <a href="chamados"  class="btn btn-primary pull-right h2">Novo chamado</a>
+    </div>
+    
+</div>
+
+
+
+<br><br>
+
+<div id="list" class="row">
+ 
+    <div class="table-responsive col-md-12">
+        <table class="table table-striped" cellspacing="0" cellpadding="0">
+            <thead>
+	<tr>
+		<td>ID:</td>
+		<td>Assunto:</td>
+		<td>Status:</td>
+		<td>Mensagem:</td>
+		<th class="actions">Ações</th>
+	</tr>
+	</thead>
+    <tbody>
+    
+		<tr ng-repeat="chamado in listaChamado">
+		<td>{{chamado.id }}</td>
+		<td>{{chamado.assunto }}</td>
+		<td>{{chamado.status }}</td>
+		<td>{{chamado.mensagem }}</td>
+		<td class="actions">
+		<a class="btn btn-danger btn-xs"  type="button" value=" X " ng-click="deleteChamado(chamado.id)">Excluir</a>
+		<a class="btn btn-warning btn-xs" type="button" value=" edit " ng-click="alterarChamado(chamado)">Alterar</a>
+		<a class="btn btn-success btn-xs" href="chamados/{{chamado.id}}">Detalhe</a>		
+		</td>			
+				
+	</tr>
+	</tbody>
+</table>
+</div>
+</div>

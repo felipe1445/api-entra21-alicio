@@ -1,0 +1,48 @@
+<meta charset="utf-8">
+<!-- Modal -->
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
+      </div>
+      <div class="modal-body">
+        Deseja realmente excluir este item?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Sim</button>
+ <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+      </div>
+    </div>
+  </div>
+</div> <!-- /.modal -->
+<h3 class="page-header">Visualizar Chamado #{{chamadoDetalhe.id}}</h3>
+<br>
+<div class="row">
+	<div class="col-md-3">
+	 <p><strong>ID Chamado</strong></p>
+ 	<p>{{chamadoDetalhe.id}}</p>
+	</div> 
+	<div class="col-md-3">
+	 <p><strong>Assunto</strong></p>
+ 	<p>{{chamadoDetalhe.assunto}}</p>
+	</div> 
+	<div class="col-md-3">
+	 <p><strong>Status</strong></p>
+ 	<p>{{chamadoDetalhe.status}}</p>
+	</div> 
+	<div class="col-md-3">
+	 <p><strong>Mensagem</strong></p>
+ 	<p>{{chamadoDetalhe.mensagem}}</p>
+	</div> 
+</div>
+
+</div>
+
+<div id="actions" class="row">
+ <div class="col-md-12">
+  <a class="btn btn-danger btn-xs"  type="button" value=" X " ng-click="deleteChamado(chamadoDetalhe.id)" data-toggle="modal" data-target="#delete-modal"">Excluir</a>
+	<a class="btn btn-warning btn-xs" type="button" value=" edit " ng-click="alterarChamado(chamado)">Alterar</a>
+ </div>
+</div>

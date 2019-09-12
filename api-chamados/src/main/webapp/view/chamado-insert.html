@@ -1,0 +1,30 @@
+<br>
+<h3 class="page-header">Adicionar Chamado</h3>
+<div class = "row">
+	<div class="form-group col-md-2">
+		<label for="campo1">ID</label>
+		<input type="text" class= "form-control" ng-model="chamado.id" style="width: 22px;"">
+	</div>
+	<div class="form-group col-md-3">
+		<label for="campo1">Assunto</label>
+		<input type="text"  class= "form-control" ng-model="chamado.assunto">
+	</div>
+	<div class="form-group col-md-3">
+		<label for="campo1">Status</label>
+		<input type="text"  class= "form-control" ng-model="chamado.status">
+	</div>
+	<div class="form-group col-md-4">
+		<label for="campo1">Mensagem</label>
+		<input type="text"  class= "form-control" ng-model="chamado.mensagem">
+	</div>
+
+<form> 
+  <hr /> 
+	<div id="actions" class="row">
+  	  <div class="col-md-12">
+		<button type="submit" class="btn btn-primary" ng-click="salvarChamado()" style="margin-left:12px">Salvar</button>
+		<button type="button" class="btn btn-danger" ng-click="cancelarAlteracaoChamado()">Desfazer</button>
+    	</div>
+    </div>
+ </form>
+</div>
