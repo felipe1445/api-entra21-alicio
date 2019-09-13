@@ -1,9 +1,9 @@
-<br>
 <h3 class="page-header">Alterar Chamado</h3>
+</br>
 <div class = "row">
 	<div class="form-group col-md-2">
 		<label for="campo1">ID</label>
-		<input type="text" class= "form-control" ng-model="chamadoDetalhe.id" style="width: 50px" value= "{{chamadoDetalhe.id}}">
+		<input type="text" class= "form-control" ng-model="chamadoDetalhe.id" style="width: 50px" value= "{{chamadoDetalhe.id}}" disabled>
 	</div>
 	<div class="form-group col-md-3">
 		<label for="campo1">Assunto</label>
@@ -13,7 +13,7 @@
 		<label for="campo1">Status</label>
 		<input type="text"  class= "form-control" ng-model="chamadoDetalhe.status" value= "{{chamadoDetalhe.status}}">
 	</div>
-	<div class="form-group col-md-4">
+	<div class="form-group col-md-3">
 		<label for="campo1">Mensagem</label>
 		<input type="text"  class= "form-control" ng-model="chamadoDetalhe.mensagem" value= "{{chamadoDetalhe.mensagem}}">
 	</div>
@@ -23,7 +23,7 @@
 	<div id="actions" class="row">
   	  <div class="col-md-12">
 		<button type="submit" class="btn btn-primary" ng-click="updateChamado()" style="margin-left:12px">Salvar</button>
-		<button type="button" class="btn btn-danger" ng-click="cancelarAlteracaoChamado()">Desfazer</button>
+		<button type="button" class="btn btn-danger" onClick="history.go(-1)">Desfazer</button>
     	</div>
     </div>
  </form>

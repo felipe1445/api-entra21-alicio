@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
 		aria-labelledby="modalLabel">
 		<div class="modal-dialog" role="document">
@@ -11,17 +12,17 @@
 				</div>
 				<div class="modal-body">Deseja realmente excluir este item?</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Sim</button>
+					<button type="button" class="btn btn-primary"  ng-click="deleteChamado(idchamado)" data-dismiss = "modal" onClick="history.go(-1)">Sim</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
 				</div>
 			</div>
 		</div>
 	</div>
-<meta charset="utf-8">
+
 <h3 class="page-header">Visualizar Chamado #{{chamadoDetalhe.id}}</h3>
 <br>
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-md-2">
 	 <p><strong>ID Chamado</strong></p>
  	<p>{{chamadoDetalhe.id}}</p>
 	</div> 
@@ -39,17 +40,13 @@
 	</div> 
 </div>
 
-<script>
-function goBack() {
-    window.history.back()
-}
-</script>
 
-<div id="actions" class="row">
- <div class="col-md-12">
- 	  <a class="btn btn-danger btn-xs"  type="button" name= "excluir" value=" X " data-toggle="modal" data-target="#delete-modal" ng-click="deleteChamado(chamado.id)">Excluir</a>
-		<a class="btn btn-warning btn-xs" type="button" value=" edit " href = "chamados-editar/{{chamado.id}}">Alterar</a>
-		<a class="btn btn-default btn-xs" type="button" onClick="history.go(-1)">Voltar</a>
+
+<div id="actions" class="row" style="margin-top:15px">
+ <div class="col-md-12" style="margin-top:15px">
+ 	  <a class="btn btn-danger "  type="button" name= "excluir" value=" X " data-toggle="modal" data-target="#delete-modal" ng-click = "procuraChamado(chamado)" >Excluir</a>
+		<a class="btn btn-warning " type="button" value=" edit " href = "chamados-editar/{{chamado.id}}">Alterar</a>
+		<a class="btn btn-default " type="button" onClick="history.go(-1)">Voltar</a>
 		
  </div>
 </div>

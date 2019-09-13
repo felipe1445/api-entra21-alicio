@@ -32,24 +32,18 @@
 
 
 
-<br><br>
 
+</br>
+</br>
 <div id="list" class="row">
-
-	<script type = "text/javascript">
- var numero;
- window.pegarID = function(){ 
-		 numero = chamado.id;
-		}
-</script>
     <div class="table-responsive col-md-12">
         <table class="table table-striped" cellspacing="0" cellpadding="0">
             <thead>
 	<tr>
-		<td>ID:</td>
-		<td>Assunto:</td>
-		<td>Status:</td>
-		<td>Mensagem:</td>
+		<th>ID</th>
+		<th>Assunto</th>
+		<th>Status</th>
+		<th>Mensagem</th>
 		<th class="actions">Ações</th>
 	</tr>
 	</thead>
@@ -63,8 +57,8 @@
 		<td>{{chamado.status }}</td>
 		<td>{{chamado.mensagem }}</td>
 		<td class="actions">
-		  <a class="btn btn-danger btn-xs"  type="button" name= "excluir" value=" X " onclick = "pegarID()" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		<a class="btn btn-warning btn-xs" type="button" value=" edit " href = "chamados-editar/{{chamado.id}}">Alterar</a>
+		  <a class="btn btn-danger btn-xs"  type="button" ng-click = "procuraChamado(chamado)" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		<a class="btn btn-warning btn-xs" type="button" href = "chamados-editar/{{chamado.id}}">Alterar</a>
 		<a class="btn btn-success btn-xs" href="chamados/{{chamado.id}}">Detalhe</a>		
 		</td>			
 				
@@ -86,7 +80,7 @@
 				</div>
 				<div class="modal-body">Deseja realmente excluir este item?</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" ng-click="deleteChamado(numero)" data-dismiss = "modal">Sim</button>
+					<button type="button" class="btn btn-primary" ng-click="deleteChamado(idchamado)" data-dismiss = "modal">Sim</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
 				</div>
 			</div>

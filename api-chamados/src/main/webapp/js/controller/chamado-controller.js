@@ -2,6 +2,7 @@ appEntra21.controller("chamadoController", function($scope, $http) {
 
 	$scope.listaChamado = [];
 	$scope.chamado = {};
+	$scope.idchamado = 0;
 	var urlApi = 'http://localhost:8080/api-entra21/rest/';
 
 	$scope.listarChamados = function() {
@@ -31,6 +32,8 @@ appEntra21.controller("chamadoController", function($scope, $http) {
 		}).then(function(response) {
 			$scope.listaChamado.push(response.data);
 			$scope.listarChamados();
+			alert("efetuado com sucesso")
+			$scope.chamado = {};
 		}, function(response) {
 			console.log('error do salvar');
 			console.log(response.data);
@@ -55,6 +58,10 @@ appEntra21.controller("chamadoController", function($scope, $http) {
 
 	$scope.alterarChamado = function(chamado) {
 		$scope.chamado = angular.copy(chamado);
+	}
+	
+	$scope.procuraChamado = function(chamado) {
+		$scope.idchamado = angular.copy(chamado.id);
 	}
 
 	$scope.cancelarAlteracaoChamado = function(chamado) {

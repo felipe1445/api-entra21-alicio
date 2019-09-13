@@ -27,10 +27,30 @@ appEntra21.controller("chamadoDetalheController", function($scope, $http,
 				data : $scope.chamadoDetalhe
 			}).then(function(response) {
 				alert("salvo");
+				history.go(-1);
 			}, function(response) {
 				console.log('error do salvar');
 				console.log(response.data);
 				console.log(response.status);
 			});
 		};
+		
+		$scope.deleteChamado = function(id) {
+
+			$http({
+				method : 'DELETE',
+				url : url + id
+			}).then(function(response) {
+				$scope.listaChamado.splice(id, 1);
+				$scope.listarChamados();
+			}, function(response) {
+				console.log('error do salvar');
+				console.log(response.data);
+				console.log(response.status);
+			});
+		};
+		$scope.procuraChamado = function(chamado) {
+			$scope.idchamado = angular.copy(chamado.id);
+		}
+
 });
