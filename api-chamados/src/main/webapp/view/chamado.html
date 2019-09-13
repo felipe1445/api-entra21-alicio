@@ -37,35 +37,36 @@
 </br>
 <div id="list" class="row">
     <div class="table-responsive col-md-12">
-        <table class="table table-striped" cellspacing="0" cellpadding="0">
+     
+        <table class="table col-md-12">
             <thead>
-	<tr>
-		<th>ID</th>
-		<th>Assunto</th>
-		<th>Status</th>
-		<th>Mensagem</th>
-		<th class="actions">Ações</th>
-	</tr>
-	</thead>
-	 
-    <tbody>
+				<tr>
+					<th class="col-md-2" >ID</th>
+					<th class="col-md-2">Assunto</th>
+					<th class="col-md-2">Status</th>
+					<th class="col-md-3">Mensagem</th>
+					<th class="actions">Ações</th>
+				</tr>
+			</thead>   
+    	<tbody>
     
 		<tr ng-repeat="chamado in listaChamado">
 		
-		<td>{{chamado.id }}</td>
-		<td>{{chamado.assunto }}</td>
-		<td>{{chamado.status }}</td>
-		<td>{{chamado.mensagem }}</td>
+		<td >{{chamado.id }}</td>
+		<td> {{chamado.assunto }}</td>
+		<td >{{chamado.status }}</td>
+		<td >{{chamado.mensagem }}</td>
 		<td class="actions">
 		  <a class="btn btn-danger btn-xs"  type="button" ng-click = "procuraChamado(chamado)" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 		<a class="btn btn-warning btn-xs" type="button" href = "chamados-editar/{{chamado.id}}">Alterar</a>
 		<a class="btn btn-success btn-xs" href="chamados/{{chamado.id}}">Detalhe</a>		
-		</td>			
+		</td>		
 				
 	</tr>
 	
 	
 	</tbody>
+	
 </table>
 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
 		aria-labelledby="modalLabel">
